@@ -1,7 +1,6 @@
 <?php
 include("../../layouts/header.views.php");
 
-
 $category_obj = new Category();
 if (isset($_POST['submit'])) {
     $message = $category_obj->create($_POST);
@@ -20,11 +19,11 @@ if (isset($_POST['submit'])) {
                         <p class="text-muted m-b-10">Create your Categories</p>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item">
-                                <a href="index.html"> <i class="fa fa-home"></i> </a>
+                                <a href="../../index.php"> <i class="fa fa-home"></i> </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#!">Category</a>
+                            <li class="breadcrumb-item"><a href="index.php">Category</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#!">Category Create</a>
+                            <li class="breadcrumb-item"><a href="">Category Create</a>
                             </li>
                         </ul>
                     </div>

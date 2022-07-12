@@ -24,6 +24,10 @@ class Validation
                         if ($rule == 'email' && filter_var($params[$field], FILTER_VALIDATE_EMAIL) == false) {
                             $response .= "The value of " . $field . " is not a valid email value.\n";
                         }
+
+                        if ($rule == 'password' && preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $params[$field]) == false) {
+                            $response .= "The value of " . $field . " is not a valid.<br>password has to be at least one number,<br>one letter,<br>one spacial character<br>and there have to be 8-12 characters.\n";
+                        }
                     }
                 }
             }

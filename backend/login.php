@@ -1,11 +1,11 @@
 <?php
 include("../Class/User.php");
 $user_obj = new User();
-if(isset($_POST['submit'])){
-    $user_obj->login($_POST);
+if (isset($_POST['submit'])) {
+    $message = $user_obj->login($_POST);
 }
 session_start();
-if(isset($_SESSION['id'])){
+if (isset($_SESSION['id'])) {
     header('location:index.php');
 }
 
@@ -32,6 +32,15 @@ include("layouts/header.php");
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body mr-auto ml-auto">
                         <form action="" method="post" class="md-float-material">
+                            <?php if (isset($message)) { ?>
+                                <div class="form-group row">
+                                    <div class="col"></div>
+                                    <div class="col-sm-8">
+                                        <?php echo $message; ?>
+                                    </div>
+                                    <div class="col"></div>
+                                </div>
+                            <?php } ?>
                             <div class="auth-box">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
