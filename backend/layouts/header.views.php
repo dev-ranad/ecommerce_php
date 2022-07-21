@@ -1,6 +1,7 @@
 <?php
 include(dirname(__DIR__) . "../../Class/User.php");
 include(dirname(__DIR__) . "../../Class/Category.php");
+include(dirname(__DIR__) . "../../Class/SubCategory.php");
 
 session_start();
 if ($_SESSION['id'] == null) {
